@@ -1,0 +1,8 @@
+{
+  "localDeviceNumber": 1,
+  "broadcastAddress": "192.168.0.255",
+  "networkPrefix": 24,
+  "remoteDeviceNumber": 505528,
+  "dataSubmitInterval": 60,
+  "maxHistory": 3
+}

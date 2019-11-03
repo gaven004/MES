@@ -1,0 +1,192 @@
+{
+  "localDeviceNumber": 1,
+  "broadcastAddress": "192.168.0.255",
+  "networkPrefix": 24,
+  "remoteDeviceNumber": 505528,
+  "devices": [
+    {
+      "id": 1,
+      "type": "flowmeter",
+      "desc": "流量计数据",
+      "properties": [
+        {
+          "name": "q",
+          "desc": "瞬时流量",
+          "objectId": 500105,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "v",
+          "desc": "瞬时流速",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "qPct",
+          "desc": "流量百分比",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "ratio",
+          "desc": "流体电导比",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "accqPos",
+          "desc": "正向累积",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "accqNeg",
+          "desc": "反向累积",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "qUnit",
+          "desc": "瞬时流量单位",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "accqUnit",
+          "desc": "累积总量单位",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "powermeter",
+      "desc": "电表数据",
+      "properties": [
+        {
+          "name": "vlnA",
+          "desc": "A相电压",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vlnB",
+          "desc": "B相电压",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vlnC",
+          "desc": "C相电压",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vlnAvg",
+          "desc": "相电压平均值",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vllAb",
+          "desc": "AB线电压",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vllBc",
+          "desc": "BC线电压",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vllCa",
+          "desc": "CA线电压",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "vllAvg",
+          "desc": "线电压平均值",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "iA",
+          "desc": "A相电流",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "iB",
+          "desc": "B相电流",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "iC",
+          "desc": "C相电流",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "iAvg",
+          "desc": "相电流平均值",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "frequency",
+          "desc": "频率",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "kwTot",
+          "desc": "总有功功率",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "kvarTot",
+          "desc": "总无功功率",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "kvaTot",
+          "desc": "总视在功率",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "pf",
+          "desc": "功率因数",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "kwh",
+          "desc": "有功电能",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "kvarh",
+          "desc": "无功电能",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        },
+        {
+          "name": "kvah",
+          "desc": "视在电能",
+          "objectId": 500102,
+          "objectType": "analog-value"
+        }
+      ]
+    }
+  ]
+}
+
+
