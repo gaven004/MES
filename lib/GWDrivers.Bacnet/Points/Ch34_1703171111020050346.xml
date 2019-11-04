@@ -1,0 +1,10 @@
+<CHANNEL ID="5" Name="BACnetIPServerEx" Description="BACnetIP服务器通道" ChannelType="34" Enable="TRUE" LocalPort="47808">
+<DEVICES>
+<DEVICE ID="1" Name="VirBACnetDevice1" Description="BACnet虚拟设备" ExistNPCIAddress="TRUE" NetwordNumber="100" MacAddress="1">
+<GROUPS>
+<GROUP ID="1" Name="MapGroup" Description="映射组" BindingChannelID="0" BindingDeviceID="-1" BindingGroupID="-1">
+</GROUP>
+</GROUPS>
+</DEVICE>
+</DEVICES>
+</CHANNEL>

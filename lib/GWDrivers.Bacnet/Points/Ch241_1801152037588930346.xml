@@ -1,0 +1,11 @@
+<CHANNEL ID="2" Name="PAJ" Description="" ChannelType="241" Enable="TRUE" ComPort="1" >
+<DEVICES>
+<DEVICE ID="1" Name="Device1" Description="">
+<GROUPS>
+<GROUP ID="1" Name="Group1" Description="">
+<POINT ID="1" Name="HandValue" Description="" PointType="0" StateText="" DataType="4" LimiteEnable="FALSE" COVLimited="0.010000" K="1.000000" B="0.000000" FloatNumber="2" Negation="FALSE"/>
+</GROUP>
+</GROUPS>
+</DEVICE>
+</DEVICES>
+</CHANNEL>

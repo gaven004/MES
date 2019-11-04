@@ -1,0 +1,15 @@
+<CHANNEL ID="2" Name="ModbusRtuUDP" Description="RTU设备采集通道" ChannelType="17" Enable="FALSE" LocalPort="12000" RemotePort="3000" RemoteIP="192.168.1.1" TimeOutMs="1000" SilenceMs="300">
+<DEVICES>
+<DEVICE ID="1" Name="Generator" Description="发电机" Address="1" OnlineStatusEnable="FALSE">
+<GROUPS>
+<GROUP ID="1" Name="HoldingRegister" Description="保持寄存器" RegisterType="3" RegisterStartAddress="1023" RegisterCount="8" RWMode="0">
+<POINT ID="1" Name="OilPressure" Description="发动机油压" PointType="0" StateText="" DataType="6" LimiteEnable="FALSE" COVLimited="0.010000" K="1.000000" B="0.000000" FloatNumber="2" Negation="FALSE" RegisterAddress="1023" ByteOrder="12" AssicConvertEnable="FALSE" BitIndexEnable="FALSE" BitIndex="0" BitCount="0" SignBitEnable="FALSE"/>
+<POINT ID="2" Name="CoolantTemp" Description="发动机水温" PointType="0" StateText="" DataType="4" LimiteEnable="FALSE" COVLimited="0.010000" K="1.000000" B="0.000000" FloatNumber="2" Negation="FALSE" RegisterAddress="1024" ByteOrder="12" AssicConvertEnable="FALSE" BitIndexEnable="FALSE" BitIndex="0" BitCount="0" SignBitEnable="FALSE"/>
+<POINT ID="3" Name="FuleLevel" Description="发动机燃油油位" PointType="0" StateText="" DataType="4" LimiteEnable="FALSE" COVLimited="0.010000" K="1.000000" B="0.000000" FloatNumber="2" Negation="FALSE" RegisterAddress="1026" ByteOrder="12" AssicConvertEnable="FALSE" BitIndexEnable="FALSE" BitIndex="0" BitCount="0" SignBitEnable="FALSE"/>
+<POINT ID="4" Name="ChargeAlternator" Description="充电发电机电压" PointType="0" StateText="" DataType="13" LimiteEnable="TRUE" COVLimited="0.010000" K="0.100000" B="0.000000" FloatNumber="2" Negation="FALSE" RegisterAddress="1027" ByteOrder="12" AssicConvertEnable="FALSE" BitIndexEnable="FALSE" BitIndex="0" BitCount="0" SignBitEnable="FALSE"/>
+<POINT ID="5" Name="Frequency" Description="发电机频率" PointType="0" StateText="" DataType="13" LimiteEnable="TRUE" COVLimited="0.010000" K="0.100000" B="0.000000" FloatNumber="2" Negation="FALSE" RegisterAddress="1030" ByteOrder="12" AssicConvertEnable="FALSE" BitIndexEnable="FALSE" BitIndex="0" BitCount="0" SignBitEnable="FALSE"/>
+</GROUP>
+</GROUPS>
+</DEVICE>
+</DEVICES>
+</CHANNEL>

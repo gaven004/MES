@@ -1,0 +1,10 @@
+<CHANNEL ID="2" Name="ModbusTcpServer" Description="" ChannelType="19" Enable="TRUE" LocalPort="502">
+<DEVICES>
+<DEVICE ID="1" Name="ModbusTCPServer" Description="">
+<GROUPS>
+<GROUP ID="1" Name="HOLDING_REGISTER" Description="" RegisterType="3">
+</GROUP>
+</GROUPS>
+</DEVICE>
+</DEVICES>
+</CHANNEL>

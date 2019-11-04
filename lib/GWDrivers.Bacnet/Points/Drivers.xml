@@ -1,0 +1,4 @@
+<DRIVER  ID="-1" Name="All Systems" Description="加载通道" ProjectName="Gateway Platform" ProgramHide="FALSE" EditMode="TRUE" SystemCaption="最新网关平台">
+<CHANNEL_ITEM Type="34" Name="BACnetIPServer" FileName="Ch34_1811221706558500346.xml" />
+<CHANNEL_ITEM Type="17" Name="SIEMENS PAC3100" FileName="Ch17_1910291007399330346.xml" />
+</DRIVER>

@@ -1,0 +1,10 @@
+<CHANNEL ID="0" Name="BACnetIPServer" Description="BACnet ·þÎñÆ÷" ChannelType="34" Enable="TRUE" LocalPort="47800">
+<DEVICES>
+<DEVICE ID="10010" Name="BACnetIPDevice" Description="" ExistNPCIAddress="FALSE" NetwordNumber="100" MacAddress="1">
+<GROUPS>
+<GROUP ID="1" Name="LinkGroup1" Description="" BindingChannelID="1" BindingDeviceID="-1" BindingGroupID="-1">
+</GROUP>
+</GROUPS>
+</DEVICE>
+</DEVICES>
+</CHANNEL>
