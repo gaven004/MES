@@ -18,7 +18,7 @@ public class CleanWorker extends Thread {
     private ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
     public CleanWorker(EntityManagerFactory sessionFactory, Integer maxHistory) {
-        super("clean worker");
+        super("CleanWorker");
         this.maxHistory = maxHistory;
         this.sessionFactory = sessionFactory;
     }
@@ -27,7 +27,7 @@ public class CleanWorker extends Thread {
     public void run() {
         log.info("启动清理历史数据任务定时器!!!");
         CleanTask cleanTask = new CleanTask(sessionFactory, maxHistory);
-        executor.scheduleAtFixedRate(cleanTask, 10, 60, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(cleanTask, 1, 1, TimeUnit.DAYS);
     }
 
     public void shutdown() {

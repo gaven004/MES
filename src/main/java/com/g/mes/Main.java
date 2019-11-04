@@ -40,7 +40,7 @@ public class Main {
 
     private static void config() {
         try {
-            log.info("读系统配置...");
+            log.info("读系统配置{}...", ConfigFile);
             cfg = Configuration.fromResource(ConfigFile);
         } catch (Exception e) {
             log.error("从资源文件恢复系统配置失败，请检查资源文件是否在指定路径，并且格式正确", e);
@@ -53,7 +53,7 @@ public class Main {
         log.info("初始化...");
         sessionFactory = Persistence.createEntityManagerFactory("com.g.mes.jpa");
         cleanWorker = new CleanWorker(sessionFactory, cfg.getMaxHistory());
-        dataAcquisitionWorker = new BacnetDataAcquisitionWorker(sessionFactory);
+        dataAcquisitionWorker = new BacnetDataAcquisitionWorker(sessionFactory, cfg.getDataSubmitInterval());
     }
 
     private static void runTask() {
