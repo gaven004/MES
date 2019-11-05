@@ -22,8 +22,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class BacnetDataAcquisitionWorker extends Thread {
-    private static final Logger log = LoggerFactory.getLogger(BacnetDataAcquisitionWorker.class);
+public class BacnetDAWorker extends Thread {
+    private static final Logger log = LoggerFactory.getLogger(BacnetDAWorker.class);
 
     private static final String ConfigFile = "/bacnet-device-config.json";
 
@@ -40,8 +40,8 @@ public class BacnetDataAcquisitionWorker extends Thread {
 
     private AtomicBoolean running = new AtomicBoolean();
 
-    public BacnetDataAcquisitionWorker(EntityManagerFactory sessionFactory, Integer interval) {
-        super("DataAcquisitionWorker");
+    public BacnetDAWorker(EntityManagerFactory sessionFactory, Integer interval) {
+        super("DAWorker");
 
         this.sessionFactory = sessionFactory;
         this.interval = interval;
@@ -160,7 +160,7 @@ public class BacnetDataAcquisitionWorker extends Thread {
             // 初始化
             init();
 
-            BacnetDataAcquisitionTask dat = new BacnetDataAcquisitionTask(sessionFactory, localDevice, remoteDevice, cfg);
+            BacnetDATask dat = new BacnetDATask(sessionFactory, localDevice, remoteDevice, cfg);
             final ScheduledFuture<?> daf = executor.scheduleWithFixedDelay(dat, interval, interval, TimeUnit.SECONDS);
 
             while (running.get() && !daf.isDone() && !daf.isCancelled()) {

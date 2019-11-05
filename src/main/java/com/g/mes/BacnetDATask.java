@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 import javax.persistence.EntityManagerFactory;
 import java.beans.PropertyDescriptor;
 
-public class BacnetDataAcquisitionTask implements Runnable {
-    private static final Logger log = LoggerFactory.getLogger(BacnetDataAcquisitionTask.class);
+public class BacnetDATask implements Runnable {
+    private static final Logger log = LoggerFactory.getLogger(BacnetDATask.class);
 
     private EntityManagerFactory sessionFactory;
 
@@ -24,7 +24,7 @@ public class BacnetDataAcquisitionTask implements Runnable {
 
     private BacnetDeviceConfiguration cfg;
 
-    public BacnetDataAcquisitionTask(EntityManagerFactory sessionFactory, LocalDevice ld, RemoteDevice rd, BacnetDeviceConfiguration cfg) {
+    public BacnetDATask(EntityManagerFactory sessionFactory, LocalDevice ld, RemoteDevice rd, BacnetDeviceConfiguration cfg) {
         this.sessionFactory = sessionFactory;
         this.ld = ld;
         this.rd = rd;

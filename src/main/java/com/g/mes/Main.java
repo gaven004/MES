@@ -1,6 +1,5 @@
 package com.g.mes;
 
-import org.apache.logging.log4j.LogManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +17,7 @@ public class Main {
 
     private static CleanWorker cleanWorker;
 
-    private static BacnetDataAcquisitionWorker dataAcquisitionWorker;
+    private static BacnetDAWorker dataAcquisitionWorker;
 
     public static void main(String[] args) {
         log.info("");
@@ -53,7 +52,7 @@ public class Main {
         log.info("初始化...");
         sessionFactory = Persistence.createEntityManagerFactory("com.g.mes.jpa");
         cleanWorker = new CleanWorker(sessionFactory, cfg.getMaxHistory());
-        dataAcquisitionWorker = new BacnetDataAcquisitionWorker(sessionFactory, cfg.getDataSubmitInterval());
+        dataAcquisitionWorker = new BacnetDAWorker(sessionFactory, cfg.getDataSubmitInterval());
     }
 
     private static void runTask() {
@@ -65,6 +64,7 @@ public class Main {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             if (cleanWorker != null) {
                 cleanWorker.shutdown();
+                dataAcquisitionWorker.interrupt();
                 try {
                     cleanWorker.join();
                 } catch (InterruptedException e) {
@@ -72,6 +72,7 @@ public class Main {
             }
             if (dataAcquisitionWorker != null) {
                 dataAcquisitionWorker.shutdown();
+                dataAcquisitionWorker.interrupt();
                 try {
                     dataAcquisitionWorker.join();
                 } catch (InterruptedException e) {
@@ -81,7 +82,6 @@ public class Main {
                 sessionFactory.close();
             }
             log.info("退出系统！！！");
-            LogManager.shutdown();
         }));
     }
 }

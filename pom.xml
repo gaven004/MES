@@ -38,9 +38,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.12.1</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
         </dependency>
 
         <dependency>
@@ -133,7 +133,7 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <!--<outputDirectory>${project.build.directory}</outputDirectory>-->
+                    <outputDirectory>${project.build.directory}</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -145,7 +145,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <mainClass>
-                                com.g.bacnet2xlink.Main
+                                com.g.mes.Main
                             </mainClass>
                         </manifest>
                     </archive>
