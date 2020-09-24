@@ -7,7 +7,7 @@
   "devices": [
     {
       "id": 1001,
-      "type": "flowmeter1",
+      "type": "flowmeter",
       "desc": "RO-1流量计数据",
       "properties": [
         {
@@ -69,12 +69,12 @@
           "desc": "系统报警",
           "objectId": 210,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1002,
-      "type": "flowmeter1",
+      "type": "flowmeter",
       "desc": "RO-2流量计数据",
       "properties": [
         {
@@ -136,7 +136,7 @@
           "desc": "系统报警",
           "objectId": 220,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
@@ -773,7 +773,7 @@
           "objectType": "analog-input"
         }
       ]
-    }, 
+    },
     {
       "id": 2006,
       "type": "powermeter",
@@ -900,7 +900,7 @@
           "objectType": "analog-input"
         }
       ]
-    },    
+    },
     {
       "id": 2007,
       "type": "powermeter",
@@ -10428,210 +10428,214 @@
     },
     {
       "id": 1003,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-1流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1641,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1642,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1643,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1004,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-2流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1644,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1645,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1646,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1005,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-3流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1647,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1648,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1649,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1006,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-4流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1650,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1651,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1652,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1007,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-5流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1653,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1654,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1655,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1008,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-6流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1656,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1657,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1658,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1009,
-      "type": "flowmeter2",
+      "type": "waterFlowmeter",
       "desc": "EF-7流量计数据",
       "properties": [
         {
-          "name": "flowrate",
+          "name": "flowRate",
           "desc": "瞬时流量",
           "objectId": 1659,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_int",
+          "name": "accqInt",
           "desc": "正向累积数值整数部分",
           "objectId": 1660,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_float",
+          "name": "accqFloat",
           "desc": "正向累积数值小数部分",
           "objectId": 1661,
           "objectType": "analog-input"
-        },
+        }
       ]
     },
     {
       "id": 1010,
-      "type": "flowmeter3",
+      "type": "steamFlowmeter",
       "desc": "W4蒸汽流量计数据",
       "properties": [
         {
-          "name": "flow_rate1",
+          "name": "flowRate1",
           "desc": "瞬时流量1",
           "objectId": 1662,
-          "objectType": "analog-input"
+          "objectType": "analog-input",
+          "factor": 0.01
         },
         {
-          "name": "flow_rate2",
+          "name": "flowRate2",
           "desc": "瞬时流量2",
           "objectId": 1663,
-          "objectType": "analog-input"
+          "objectType": "analog-input",
+          "factor": 0.01
         },
         {
-          "name": "flow_total1",
+          "name": "flowTotal1",
           "desc": "累计流量1",
           "objectId": 1664,
-          "objectType": "analog-input"
+          "objectType": "analog-input",
+          "factor": 0.1
         },
         {
-          "name": "flow_total2",
+          "name": "flowTotal2",
           "desc": "累计流量2",
           "objectId": 1665,
-          "objectType": "analog-input"
-        },
+          "objectType": "analog-input",
+          "factor": 0.1
+        }
       ]
-    },
+    }
   ]
 }
 

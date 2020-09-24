@@ -3,16 +3,16 @@
 
  Source Server         : localhost
  Source Server Type    : SQL Server
- Source Server Version : 14001000
- Source Host           : localhost:1433
+ Source Server Version : 14002027
+ Source Host           : localhost\SQLSERVER:1433
  Source Catalog        : MES
  Source Schema         : dbo
 
  Target Server Type    : SQL Server
- Target Server Version : 14001000
+ Target Server Version : 14002027
  File Encoding         : 65001
 
- Date: 11/09/2019 22:30:08
+ Date: 05/11/2019 11:16:59
 */
 
 
@@ -25,7 +25,7 @@ GO
 
 CREATE TABLE [dbo].[flowmeter_dat] (
   [id] int  IDENTITY(1,1) NOT NULL,
-  [ctime] datetime  DEFAULT GETDATE() NOT NULL,
+  [ctime] datetime DEFAULT (getdate()) NOT NULL,
   [device_id] int  NOT NULL,
   [q] real  NULL,
   [v] real  NULL,
@@ -119,25 +119,6 @@ GO
 
 
 -- ----------------------------
--- Records of flowmeter_dat
--- ----------------------------
-SET IDENTITY_INSERT [dbo].[flowmeter_dat] ON
-GO
-
-INSERT INTO [dbo].[flowmeter_dat] ([id], [ctime], [device_id], [q], [v], [q_pct], [ratio], [accq_pos], [accq_neg], [q_unit], [accq_unit]) VALUES (N'1', N'2019-09-11 21:21:46.000', N'1', N'100', N'6', N'35', NULL, N'100', N'0', N'0', N'0')
-GO
-
-INSERT INTO [dbo].[flowmeter_dat] ([id], [ctime], [device_id], [q], [v], [q_pct], [ratio], [accq_pos], [accq_neg], [q_unit], [accq_unit]) VALUES (N'3', N'2019-09-11 21:23:38.000', N'1', N'110', N'6.2', N'40', NULL, N'210', N'0', N'0', N'0')
-GO
-
-INSERT INTO [dbo].[flowmeter_dat] ([id], [ctime], [device_id], [q], [v], [q_pct], [ratio], [accq_pos], [accq_neg], [q_unit], [accq_unit]) VALUES (N'4', N'2019-09-11 21:24:43.000', N'1', N'105', N'6.1', N'38', NULL, N'300', N'0', N'0', N'0')
-GO
-
-SET IDENTITY_INSERT [dbo].[flowmeter_dat] OFF
-GO
-
-
--- ----------------------------
 -- Table structure for powermeter_dat
 -- ----------------------------
 IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[powermeter_dat]') AND type IN ('U'))
@@ -146,7 +127,7 @@ GO
 
 CREATE TABLE [dbo].[powermeter_dat] (
   [id] int  IDENTITY(1,1) NOT NULL,
-  [ctime] datetime  DEFAULT GETDATE() NOT NULL,
+  [ctime] datetime DEFAULT (getdate()) NOT NULL,
   [device_id] int  NOT NULL,
   [vln_a] real  NULL,
   [vln_b] real  NULL,
@@ -336,15 +317,12 @@ GO
 
 
 -- ----------------------------
--- Records of powermeter_dat
+-- Indexes structure for table flowmeter_dat
 -- ----------------------------
-SET IDENTITY_INSERT [dbo].[powermeter_dat] ON
-GO
-
-INSERT INTO [dbo].[powermeter_dat] ([id], [ctime], [device_id], [vln_a], [vln_b], [vln_c], [vln_avg], [vll_ab], [vll_bc], [vll_ca], [vll_avg], [i_a], [i_b], [i_c], [i_avg], [frequency], [kw_tot], [kvar_tot], [kva_tot], [pf], [kwh], [kvarh], [kvah]) VALUES (N'1', N'2019-09-11 21:42:09.000', N'1', N'220', N'219', N'218', N'219', N'380', N'381', N'382', N'381', N'30', N'35', N'40', N'35', N'50', N'1355', N'125', N'532', N'0.96', N'135.5', N'12.5', N'53.2')
-GO
-
-SET IDENTITY_INSERT [dbo].[powermeter_dat] OFF
+CREATE NONCLUSTERED INDEX [idx_ctime]
+ON [dbo].[flowmeter_dat] (
+  [ctime] ASC
+)
 GO
 
 
@@ -354,6 +332,16 @@ GO
 ALTER TABLE [dbo].[flowmeter_dat] ADD CONSTRAINT [PK__flowmete__3213E83FEFCB60C8] PRIMARY KEY CLUSTERED ([id])
 WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
 ON [PRIMARY]
+GO
+
+
+-- ----------------------------
+-- Indexes structure for table powermeter_dat
+-- ----------------------------
+CREATE NONCLUSTERED INDEX [idx_ctime]
+ON [dbo].[powermeter_dat] (
+  [ctime] ASC
+)
 GO
 
 

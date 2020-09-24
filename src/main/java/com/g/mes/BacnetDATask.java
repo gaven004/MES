@@ -60,11 +60,19 @@ public class BacnetDATask implements Runnable {
                         Object target = null;
 
                         if (Float.class.equals(propertyDescriptor.getPropertyType())) {
-                            target = ((Real) value).floatValue();
+                            if (deviceProperty.getFactor() != null && deviceProperty.getFactor() != 0) {
+                                target = ((Real) value).floatValue() * deviceProperty.getFactor();
+                            } else {
+                                target = ((Real) value).floatValue();
+                            }
                         } else if (Integer.class.equals(propertyDescriptor.getPropertyType())) {
                             target = (int) ((Real) value).floatValue();
                         } else if (Double.class.equals(propertyDescriptor.getPropertyType())) {
-                            target = (double) ((Real) value).floatValue();
+                            if (deviceProperty.getFactor() != null && deviceProperty.getFactor() != 0) {
+                                target = (double) ((Real) value).floatValue() * deviceProperty.getFactor();
+                            } else {
+                                target = (double) ((Real) value).floatValue();
+                            }
                         } else {
                             target = value.toString();
                         }
@@ -89,10 +97,14 @@ public class BacnetDATask implements Runnable {
     }
 
     private Object createEntiry(String type) {
-        if ("flowmeter".equals(type)) {
-            return new FlowmeterDatEntity();
-        } else if ("powermeter".equals(type)) {
+        if ("powermeter".equals(type)) {
             return new PowermeterDatEntity();
+        } else if ("flowmeter".equals(type)) {
+            return new FlowmeterDatEntity();
+        } else if ("waterFlowmeter".equals(type)) {
+            return new WaterFlowmeterDatEntity();
+        } else if ("steamFlowmeter".equals(type)) {
+            return new SteamFlowmeterDatEntity();
         }
 
         return null;

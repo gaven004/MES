@@ -9,4 +9,6 @@ public class BacnetDeviceProperty {
 
     private String objectType;
     private int objectId;
+
+    private Float factor;
 }
