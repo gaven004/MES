@@ -1,5 +1,8 @@
 package com.g.mes;
 
+import java.beans.PropertyDescriptor;
+import javax.persistence.EntityManagerFactory;
+
 import com.serotonin.bacnet4j.LocalDevice;
 import com.serotonin.bacnet4j.RemoteDevice;
 import com.serotonin.bacnet4j.type.Encodable;
@@ -10,9 +13,6 @@ import com.serotonin.bacnet4j.util.RequestUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.persistence.EntityManagerFactory;
-import java.beans.PropertyDescriptor;
 
 public class BacnetDATask implements Runnable {
     private static final Logger log = LoggerFactory.getLogger(BacnetDATask.class);
@@ -65,10 +65,7 @@ public class BacnetDATask implements Runnable {
                             } else {
                                 target = ((Real) value).floatValue();
                             }
-
-                            if ((float) target < 0.00001) {
-                                target = 0;
-                            }
+                            target = Math.round((float) target * 1000000.0) / 1000000.0;
                         } else if (Integer.class.equals(propertyDescriptor.getPropertyType())) {
                             target = (int) ((Real) value).floatValue();
                         } else if (Double.class.equals(propertyDescriptor.getPropertyType())) {
@@ -77,10 +74,7 @@ public class BacnetDATask implements Runnable {
                             } else {
                                 target = (double) ((Real) value).floatValue();
                             }
-
-                            if ((double) target < 0.00001) {
-                                target = 0;
-                            }
+                            target = Math.round((double) target * 1000000.0) / 1000000.0;
                         } else {
                             target = value.toString();
                         }
