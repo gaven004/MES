@@ -9,7 +9,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "water_flowmeter_dat", schema = "dbo", catalog = "MES")
+@Table(name = "steam_flowmeter_dat", schema = "dbo", catalog = "MES")
 @DynamicInsert
 @DynamicUpdate
 @ToString

@@ -65,7 +65,7 @@ public class BacnetDATask implements Runnable {
                             } else {
                                 target = ((Real) value).floatValue();
                             }
-                            target = Math.round((float) target * 1000000.0) / 1000000.0;
+                            target = (float) (Math.round((float) target * 1000000.0) / 1000000.0);
                         } else if (Integer.class.equals(propertyDescriptor.getPropertyType())) {
                             target = (int) ((Real) value).floatValue();
                         } else if (Double.class.equals(propertyDescriptor.getPropertyType())) {
@@ -74,13 +74,13 @@ public class BacnetDATask implements Runnable {
                             } else {
                                 target = (double) ((Real) value).floatValue();
                             }
-                            target = Math.round((double) target * 1000000.0) / 1000000.0;
+                            target = (double) (Math.round((double) target * 1000000.0) / 1000000.0);
                         } else {
                             target = value.toString();
                         }
-
                         PropertyUtils.setProperty(entity, deviceProperty.getName(), target);
                     } catch (Exception ignore) {
+                        log.warn("数据采集出错", ignore);
                     }
                 }
                 PersistenceUtil.persist(sessionFactory, entity, log);
