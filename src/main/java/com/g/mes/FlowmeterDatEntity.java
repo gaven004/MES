@@ -26,6 +26,10 @@ public class FlowmeterDatEntity {
     private Double accqNeg;
     private Integer qUnit;
     private Integer accqUnit;
+    private Integer highAlarm;
+    private Integer lowAlarm;
+    private Integer atcAlarm;
+    private Integer sysAlarm;
 
     @Id
     @Column(name = "id")
@@ -138,26 +142,56 @@ public class FlowmeterDatEntity {
         this.accqUnit = accqUnit;
     }
 
+    @Basic
+    @Column(name = "high_alarm")
+    public Integer getHighAlarm() {
+        return highAlarm;
+    }
+
+    public void setHighAlarm(Integer highAlarm) {
+        this.highAlarm = highAlarm;
+    }
+
+    @Basic
+    @Column(name = "low_alarm")
+    public Integer getLowAlarm() {
+        return lowAlarm;
+    }
+
+    public void setLowAlarm(Integer lowAlarm) {
+        this.lowAlarm = lowAlarm;
+    }
+
+    @Basic
+    @Column(name = "atc_alarm")
+    public Integer getAtcAlarm() {
+        return atcAlarm;
+    }
+
+    public void setAtcAlarm(Integer atcAlarm) {
+        this.atcAlarm = atcAlarm;
+    }
+
+    @Basic
+    @Column(name = "sys_alarm")
+    public Integer getSysAlarm() {
+        return sysAlarm;
+    }
+
+    public void setSysAlarm(Integer sysAlarm) {
+        this.sysAlarm = sysAlarm;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FlowmeterDatEntity that = (FlowmeterDatEntity) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(ctime, that.ctime) &&
-                Objects.equals(deviceId, that.deviceId) &&
-                Objects.equals(q, that.q) &&
-                Objects.equals(v, that.v) &&
-                Objects.equals(qPct, that.qPct) &&
-                Objects.equals(ratio, that.ratio) &&
-                Objects.equals(accqPos, that.accqPos) &&
-                Objects.equals(accqNeg, that.accqNeg) &&
-                Objects.equals(qUnit, that.qUnit) &&
-                Objects.equals(accqUnit, that.accqUnit);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ctime, deviceId, q, v, qPct, ratio, accqPos, accqNeg, qUnit, accqUnit);
+        return Objects.hash(id);
     }
 }
