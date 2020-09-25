@@ -5,6 +5,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.g.mes.FlowmeterDatEntity</class>
         <class>com.g.mes.PowermeterDatEntity</class>
+        <class>com.g.mes.WaterFlowmeterDatEntity</class>
+        <class>com.g.mes.SteamFlowmeterDatEntity</class>
         <properties>
             <!--
             <property name="hibernate.connection.url" value="jdbc:sqlserver://localhost\SQLSERVER:1433;database=mes"/>
