@@ -35,37 +35,37 @@
           "objectType": "analog-input"
         },
         {
-          "name": "accq_Pos",
+          "name": "accqPos",
           "desc": "正向累积",
           "objectId": 205,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_neg",
+          "name": "accqNeg",
           "desc": "反向累积",
           "objectId": 206,
           "objectType": "analog-input"
         },
         {
-          "name": "high_alarm",
+          "name": "highAlarm",
           "desc": "上限报警",
           "objectId": 207,
           "objectType": "analog-input"
         },
         {
-          "name": "low_alarm",
+          "name": "lowAlarm",
           "desc": "下限报警",
           "objectId": 208,
           "objectType": "analog-input"
         },
         {
-          "name": "atc_alarm",
+          "name": "atcAlarm",
           "desc": "空管报警",
           "objectId": 209,
           "objectType": "analog-input"
         },
         {
-          "name": "sys_larm",
+          "name": "sysAlarm",
           "desc": "系统报警",
           "objectId": 210,
           "objectType": "analog-input"
@@ -102,37 +102,37 @@
           "objectType": "analog-input"
         },
         {
-          "name": "accq_Pos",
+          "name": "accqPos",
           "desc": "正向累积",
           "objectId": 215,
           "objectType": "analog-input"
         },
         {
-          "name": "accq_neg",
+          "name": "accqNeg",
           "desc": "反向累积",
           "objectId": 216,
           "objectType": "analog-input"
         },
         {
-          "name": "high_larm",
+          "name": "highAlarm",
           "desc": "上限报警",
           "objectId": 217,
           "objectType": "analog-input"
         },
         {
-          "name": "low_alarm",
+          "name": "lowAlarm",
           "desc": "下限报警",
           "objectId": 218,
           "objectType": "analog-input"
         },
         {
-          "name": "atc_alarm",
+          "name": "atcAlarm",
           "desc": "空管报警",
           "objectId": 219,
           "objectType": "analog-input"
         },
         {
-          "name": "sys_alarm",
+          "name": "sysAlarm",
           "desc": "系统报警",
           "objectId": 220,
           "objectType": "analog-input"
