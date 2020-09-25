@@ -65,6 +65,10 @@ public class BacnetDATask implements Runnable {
                             } else {
                                 target = ((Real) value).floatValue();
                             }
+
+                            if ((float) target < 0.00001) {
+                                target = 0;
+                            }
                         } else if (Integer.class.equals(propertyDescriptor.getPropertyType())) {
                             target = (int) ((Real) value).floatValue();
                         } else if (Double.class.equals(propertyDescriptor.getPropertyType())) {
@@ -72,6 +76,10 @@ public class BacnetDATask implements Runnable {
                                 target = (double) ((Real) value).floatValue() * deviceProperty.getFactor();
                             } else {
                                 target = (double) ((Real) value).floatValue();
+                            }
+
+                            if ((double) target < 0.00001) {
+                                target = 0;
                             }
                         } else {
                             target = value.toString();
