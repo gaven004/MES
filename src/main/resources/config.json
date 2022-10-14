@@ -1,4 +1,4 @@
 {
   "dataSubmitInterval": 60,
-  "maxHistory": 3
+  "maxHistory": 180
 }

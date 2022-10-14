@@ -29,7 +29,7 @@ public class CleanTask implements Runnable {
             EntityManager entityManager = null;
             boolean permit = false;
             try {
-                LocalDateTime ts = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).minusYears(maxHistory);
+                LocalDateTime ts = LocalDateTime.now().truncatedTo(ChronoUnit.DAYS).minusDays(maxHistory);
                 log.info("删除{}前的数据", ts);
 
                 entityManager = sessionFactory.createEntityManager();
@@ -44,6 +44,16 @@ public class CleanTask implements Runnable {
                 query.setParameter("time", ts);
                 deleted = query.executeUpdate();
                 log.info("删除{}条PowermeterDat记录", deleted);
+
+                query = entityManager.createQuery("DELETE FROM SteamFlowmeterDatEntity d WHERE d.ctime < :time");
+                query.setParameter("time", ts);
+                deleted = query.executeUpdate();
+                log.info("删除{}条SteamFlowmeterDatEntity记录", deleted);
+
+                query = entityManager.createQuery("DELETE FROM WaterFlowmeterDatEntity d WHERE d.ctime < :time");
+                query.setParameter("time", ts);
+                deleted = query.executeUpdate();
+                log.info("删除{}条WaterFlowmeterDatEntity记录", deleted);
 
                 entityManager.getTransaction().commit();
                 log.info("清理历史数据任务结束!");
